@@ -17,7 +17,7 @@ type Encoder struct {
 
 // NewEncoder returns a new encoder that writes to w.
 func NewEncoder(w io.Writer, plugins ...plugin) *Encoder {
-	e := &Encoder{w: w, contentPrefix: contentPrefix, attributePrefix: attrPrefix}
+	e := &Encoder{w: w, contentPrefix: ContentPrefix, attributePrefix: AttrPrefix}
 	for _, p := range plugins {
 		e = p.AddToEncoder(e)
 	}

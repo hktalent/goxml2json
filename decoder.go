@@ -9,8 +9,8 @@ import (
 )
 
 const (
-	attrPrefix    = "-"
-	contentPrefix = "#"
+	AttrPrefix    = "-"
+	ContentPrefix = "#"
 )
 
 // A Decoder reads and decodes XML objects from an input stream.
@@ -55,7 +55,7 @@ func (dec *Decoder) DecodeWithCustomPrefixes(root *Node, contentPrefix string, a
 
 // NewDecoder returns a new decoder that reads from r.
 func NewDecoder(r io.Reader, plugins ...plugin) *Decoder {
-	d := &Decoder{r: r, contentPrefix: contentPrefix, attributePrefix: attrPrefix, excludeAttrs: map[string]bool{}}
+	d := &Decoder{r: r, contentPrefix: ContentPrefix, attributePrefix: AttrPrefix, excludeAttrs: map[string]bool{}}
 	for _, p := range plugins {
 		d = p.AddToDecoder(d)
 	}
