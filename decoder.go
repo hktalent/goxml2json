@@ -8,7 +8,7 @@ import (
 	"golang.org/x/net/html/charset"
 )
 
-const (
+var (
 	AttrPrefix    = "-"
 	ContentPrefix = "#"
 )
